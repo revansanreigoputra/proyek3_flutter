@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "292204106233",
+    "project_id": "proyek3-eticketing-19b11",
+    "storage_bucket": "proyek3-eticketing-19b11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292204106233:android:c697eb044bef2c5f16ed28",
+        "android_client_info": {
+          "package_name": "com.example.proyek3_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292204106233-4vtp4dru0da8cikk3rcda3h9dip8b1v5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyek3_flutter",
+            "certificate_hash": "2a8e1678c63959e7e857ed3651ddbb226016aeb7"
+          }
+        },
+        {
+          "client_id": "292204106233-cl3cu2kba2kv2qdjnb3j8erthuhfg8qr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHkFkPyU6H0VasWh4oyFkYnAjU07FJme8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292204106233-cl3cu2kba2kv2qdjnb3j8erthuhfg8qr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

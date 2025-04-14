@@ -1,0 +1,104 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
+import 'package:proyek3_flutter/core/assets/assets.gen.dart';
+import 'package:proyek3_flutter/core/components/spaces.dart';
+import 'package:proyek3_flutter/core/constants/colors.dart';
+import 'package:proyek3_flutter/core/constants/variabels.dart';
+import 'package:proyek3_flutter/core/extensions/build_context_ext.dart';
+import 'package:proyek3_flutter/data/models/responses/event_response_model.dart';
+
+class CardTicketPreview extends StatelessWidget {
+  final EventModel event;
+  final TicketModel ticket;
+  const CardTicketPreview({
+    super.key,
+    required this.event,
+    required this.ticket,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: context.deviceWidth,
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: event.image!.contains('events')
+                      ? Image.asset(
+                          Assets.images.banner1.path,
+                          width: 65.0,
+                          height: 65.0,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.network(
+                          '${Variables.imageStorage}/${event.image}',
+                          width: 65.0,
+                          height: 65.0,
+                          fit: BoxFit.cover,
+                        ),
+                ),
+                const SpaceWidth(10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        event.name!,
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.textBlack2,
+                        ),
+                      ),
+                      Text(
+                        "${ticket.sku!.name}: 1",
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          color: AppColors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: context.deviceWidth,
+            padding: const EdgeInsets.all(16.0),
+            decoration: const BoxDecoration(
+                color: Color(0xffF2F2F2),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(8),
+                  bottomRight: Radius.circular(8),
+                )),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.info_outline, size: 20, color: AppColors.biru),
+                SpaceWidth(8),
+                Text(
+                  'Valid Pada : 25 Maret 2025',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: AppColors.biru,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
